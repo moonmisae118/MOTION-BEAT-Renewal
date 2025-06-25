@@ -10,9 +10,8 @@ interface MainHeaderProps {
 
 const MainHeader: React.FC<MainHeaderProps> = ({ roomName }) => {
   const navigate = useNavigate();
-
   const goBack = () => {
-    navigate('/main');
+    navigate('/lobby');
   };
 
   return (

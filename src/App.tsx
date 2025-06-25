@@ -26,6 +26,7 @@ import MoveBg from './components/common/MoveBg';
 import SoundManagerProvider from './components/common/UseSoundManager';
 import Lobby from './pages/lobby';
 import Login from './pages/login';
+import Playtype from './pages/playType';
 import Signup from './pages/signup';
 
 const routeConfig: RouteObject[] = [
@@ -34,7 +35,7 @@ const routeConfig: RouteObject[] = [
   // { path: '/forgotPw', element: <ForgotPw /> },
   { path: '/signup', element: <Signup /> },
   { path: '/lobby', element: <Lobby /> },
-  // { path: '/main/playtype', element: <Playtype /> },
+  { path: '/lobby/playtype', element: <Playtype /> },
   // { path: '/main/tutorial', element: <Tutorial /> },
   // { path: '/main/ranking', element: <Ranking /> },
   // { path: '/main/setting', element: <Settings /> },

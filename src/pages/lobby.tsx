@@ -11,20 +11,20 @@ const Lobby = () => {
   const navigate = useNavigate();
   const backendUrl = import.meta.env.REACT_APP_BACK_API_URL;
 
-//   const [isModalOpen, setModalOpen] = useState(false);
-//   const [currentElement, setCurrentElement] = useState(null);
+  //   const [isModalOpen, setModalOpen] = useState(false);
+  //   const [currentElement, setCurrentElement] = useState(null);
   const [roomName, setRoomName] = useState('');
 
   const [tutorialStarted, setTutorialStarted] = useState(false); // 중복 방지
 
-//   const closeModal = () => {
-//     setModalOpen(false);
-//     setCurrentElement(null);
-//   };
+  //   const closeModal = () => {
+  //     setModalOpen(false);
+  //     setCurrentElement(null);
+  //   };
 
   const goToPlay = () => {
     setRoomName('PLAY');
-    navigate('/main/playtype');
+    navigate('/lobby/playtype');
   };
 
   const goToTutorial = async () => {
@@ -50,7 +50,7 @@ const Lobby = () => {
 
       const roomData = response.data;
       setRoomName('Tutorial');
-      navigate('/main/tutorial', { state: { roomData } });
+      navigate('/lobby/tutorial', { state: { roomData } });
     } catch (error) {
       console.error('튜토리얼 생성 실패:', error);
       setTutorialStarted(false);
@@ -60,35 +60,35 @@ const Lobby = () => {
 
   const goToRanking = () => {
     setRoomName('Rankings');
-    navigate('/main/ranking');
+    navigate('/lobby/ranking');
   };
 
   const goToSettings = () => {
     setRoomName('Setting');
-    navigate('/main/settings');
+    navigate('/lobby/settings');
   };
 
-//   const logout = async () => {
-//     try {
-//       await axios.patch(
-//         `${backendUrl}/api/users/logout`,
-//         {},
-//         {
-//           headers: {
-//             'Content-Type': 'application/json',
-//             Authorization: `Bearer ${sessionStorage.getItem('userToken')}`,
-//             UserId: sessionStorage.getItem('userId'),
-//             Nickname: sessionStorage.getItem('nickname'),
-//           },
-//         },
-//       );
+  //   const logout = async () => {
+  //     try {
+  //       await axios.patch(
+  //         `${backendUrl}/api/users/logout`,
+  //         {},
+  //         {
+  //           headers: {
+  //             'Content-Type': 'application/json',
+  //             Authorization: `Bearer ${sessionStorage.getItem('userToken')}`,
+  //             UserId: sessionStorage.getItem('userId'),
+  //             Nickname: sessionStorage.getItem('nickname'),
+  //           },
+  //         },
+  //       );
 
-//       sessionStorage.clear();
-//       navigate('/login');
-//     } catch (error) {
-//       console.error('로그아웃 에러:', error);
-//     }
-//   };
+  //       sessionStorage.clear();
+  //       navigate('/login');
+  //     } catch (error) {
+  //       console.error('로그아웃 에러:', error);
+  //     }
+  //   };
 
   return (
     <>
